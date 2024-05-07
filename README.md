@@ -107,4 +107,12 @@ Switch(config-if)#channel-group 1 mode active
 ![1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/8bf6b4f4-ae44-44af-a3dc-a80686cece7c)
 
 
+![99](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/a80ab58c-0a3e-4034-a2d9-44b0fa70f3c4)
+
+MLS-Ring1(config)#int vlan 11
+MLS-Ring1(config-if)#ip add 10.10.11.1 255.255.255.0
+MLS-Ring1(config-if)#int vlan 12
+MLS-Ring1(config-if)#ip add 10.10.12.1 255.255.255.128
+MLS-Ring1(config-if)#int vlan 13
+MLS-Ring1(config-if)#ip add 10.10.13.1 255.255.255.192
 
