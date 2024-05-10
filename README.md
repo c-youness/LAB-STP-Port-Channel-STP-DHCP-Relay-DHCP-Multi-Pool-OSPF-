@@ -96,8 +96,15 @@ MultiSwitch(config-if)#switchport trunk encapsulation dot1q
 ===================================
 MultiSwitch(config-if)#switchport mode trunk 
 ===================================
+![rrrrr](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/1a500481-792c-48f5-bc2d-deabb83a2fc4)
 
-![fffffffffffffffffffffff](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/a868a476-efc8-4b0d-a99d-eac30b50eb0c)
+![ddddd](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/a5fc3b21-eb1b-4f92-ab77-5f70dff5f7bd)
+
+
+
+
+
+
 
 MultiSwitch(config)#interface vlan 11
 ===================================
@@ -108,7 +115,7 @@ MultiSwitch#show ip interface brief
 
 ![aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/d645beb3-c5ed-48dd-93a5-fd5852e6e990)
 
-![ping](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/be4d5d02-9c43-4bd2-a154-9fcc17419bef)
+
 
 MultiSwitch(config)#interface vlan 12
 ===================================
@@ -127,9 +134,6 @@ MLS-Ring1(config)#ip dhcp excluded-address 10.10.13.1
 ![pinghhhh](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/73046a4f-c36a-40f7-acf1-c736f1c16ff1)
 
 
- 
-
-
 
 configuration switch Spanning Tree (PVST)
 ================================
@@ -141,13 +145,16 @@ switch(config)#spanning-tree vlan 13 root primary
 ================================
 switch(config)#spanning-tree vlan 1 root primary
 ================================
-switch(config)#end
-================================
 switch#show spanning-tree
 ================================
-![sss](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/00ebea2a-3346-4a22-9862-d0288d7865ed)
+(https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/00ebea2a-3346-4a22-9862-d0288d7865ed)
 
-![jjjjj](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/498bd47e-3c3c-45ae-b2c3-e1737bf83383)
+![yyyyyyyyyy](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/0825c9ca-1502-4d93-b00a-c9077528ebfa)
+
+
+
+
+
 
 Switch(config)#inte range fastEthernet 0/5-6
 ================================
@@ -161,7 +168,8 @@ Switch(config)#interface port-channel 1
 =====================
 Switch(config-if)#switchport mode trunk 
 =====================
-![dddddd](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/d32fc563-2bb3-400c-8c90-f1a0cec40a21)
+![ttttttttttttttt](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/c64810ba-42e1-4592-a76b-52d82f81140a)
+
 
 Switch(config)#inte range fastEthernet 0/3-4
 ===============================
@@ -170,7 +178,7 @@ Switch(config-if-range)#switchport mode access
 Switch(config-if-range)#switchport access vlan 11
 ===============================
 Mode Trunk
-----------
+===========
 Switch(config)#interface range fastEthernet 0/1-2
 ========================
 Switch(config-if-range)#switchport mode trunk
