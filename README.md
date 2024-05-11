@@ -135,6 +135,13 @@ MLS-Ring1(config)#ip dhcp excluded-address 10.10.13.1
 
 
 
+======================================================================
+
+![3](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/4cf618de-d7e6-436c-b7e1-227334b162bf)
+
+
+
+
 configuration switch Spanning Tree (PVST)
 ================================
 switch(config)#spanning-tree vlan 11 root primary
@@ -147,7 +154,7 @@ switch(config)#spanning-tree vlan 1 root primary
 ================================
 switch#show spanning-tree
 ================================
-(https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/00ebea2a-3346-4a22-9862-d0288d7865ed)
+
 
 ![yyyyyyyyyy](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/0825c9ca-1502-4d93-b00a-c9077528ebfa)
 
