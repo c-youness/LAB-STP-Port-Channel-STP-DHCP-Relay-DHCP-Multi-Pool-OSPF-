@@ -116,6 +116,7 @@ Multiswitch(config-if)#ip  address 10.10.13.1 255.255.255.192
 ![show inte vlan multiswtch](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/d710a58d-4ffe-4f61-87ff-3094574aec35)
 
 
+
 Multiswitch(config)#ip dhcp pool Admin11
 =====================================
 Multiswitch(dhcp-config)#network 10.10.11.0 255.255.255.0
@@ -145,8 +146,8 @@ Multiswitch(dhcp-config)#default-router 10.10.13.1
 Multiswitch(dhcp-config)#dns-server 1.1.1.1
 =====================================
 
-Activation Mode Access  
-=====================================
+Activation Mode Access (Switch1-Switch2)
+========================================
 
 ![activie mode access](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/91431d2b-4f24-4490-a64c-aa8c22983d93)
 
@@ -159,10 +160,78 @@ Switch1(config-if-range)#switchport access vlan 11
 ![affichie mode acces](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/c95251de-8a78-47fb-87ab-b862e1c39198)
 
 
-Switch(config)#interface range f 0/3-4
+Switch2(config)#interface range f 0/3-4
 ==========================
-Switch(config-if-range)#switchport mode access
+Switch2(config-if-range)#switchport mode access
 ==========================
-Switch(config-if-range)#switchport access vlan 11
+Switch2(config-if-range)#switchport access vlan 11
 ==========================
+![affiche sw2 mode acc](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/7d640575-2eb0-42e7-a3ae-93fbb950c255)
+
+Activatio nmode trunk
+===================
+Switch2(config)#interface range f 0/1-2
+====================
+Switch2(config-if-range)#switchport mode trunk
+====================
+![mode trunk](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/dce5d747-9044-4749-9a32-9fd0ce68bdcb)
+
+ Activation Mode Access (Switch3 | Switch4)
+============================================
+![active mode access 3,4](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/50d8f561-9284-4451-bddf-9828d1dc5891)
+
+Switch3(config)#interface range f 0/3-4
+=======================
+Switch3(config-if-range)#switchport mode access
+=======================
+Switch3(config-if-range)#switchport access vlan 12
+=======================
+![affichie mode access switch3](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/f35bb166-65bd-4f9d-9213-9110372d44df)
+
+Switch4(config)#interface range f 0/3-4
+=======================
+Switch4(config-if-range)#switchport mode access
+=======================
+Switch4(config-if-range)#switchport access vlan 12
+=======================
+Activatio nmode trunk
+===================
+Switch4(config)#interface range f 0/1-2
+====================
+Switch4(config-if-range)#switchport mode trunk
+====================
+
+![mode trunk final](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/a2fcb395-0140-4061-bc01-46d313249a5c)
+
+
+Activation Mode Access (Switch5 | Switch6)
+=======================
+![mode access sw5,sw6](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/3c2306f2-01d3-40ce-a59b-6fe9756ed631)
+
+Switch5(config)#interface range f 0/3-4
+======================
+Switch5(config-if-range)#switchport mode access
+======================
+Switch5(config-if-range)#switchport access vlan 13
+======================
+
+Switch6(config)#interface range f 0/3-4
+======================
+Switch6(config-if-range)#switchport mode access
+======================
+Switch6(config-if-range)#switchport access vlan 13
+======================
+![affichie mode access sw5,sw6](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/ae0ec93d-7874-4212-ba7f-5aef9468b93b)
+
+
+Activatio nmode trunk
+===================
+Switch6(config)#interface range f 0/1-2
+====================
+Switch6(config-if-range)#switchport mode trunk
+====================
+
+![mode trunk 01-2](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/f036fd05-b677-4c28-ab6b-2f641f61daf5)
+
+
 
