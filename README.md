@@ -269,8 +269,99 @@ Multiswitch(config-if)#switchport trunk encapsulation dot1q
 ====================
 Multiswitch(config-if)#switchport mode trunk 
 ====================
+Activation OSPF
+====================
+Multiswitch(config)#router ospf 1
+====================
+Multiswitch(config-router)#network 10.10.11.0  0.0.0.255  area 1
+====================
+Multiswitch(config-router)#network 10.10.12.0  0.0.0.127  area 1
+====================
+Multiswitch(config-router)#network 10.10.13.0 0.0.0.63  area 1
+====================
+Multiswitch(config-router)#network 172.16.1.0 0.0.0.3  area 1
+====================
+
 ![multiswitch11111](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/07ad29a2-8908-48a0-97b6-ab48d77231cd)
 
 
+![1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/affdb97f-e438-48c1-b7c2-d8ab5db12f83)
+
+Multiswitch(config)#interface GigabitEthernet0/1
+===================
+Multiswitch(config-if)#ip address 172.16.1.2 255.255.255.252
+===================
+Multiswitch(config-if)#no sh
+===================
+Multiswitch(config-if)#exit 
+===================
+Multiswitch(config)#interface GigabitEthernet0/0
+===================
+Multiswitch(config-if)#ip address 192.168.1.2 255.255.255.252
+===================
+![1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/cc2b1967-ca5b-46ce-afa2-b8999e17b0d7)
 
 
+Router3(config)#router ospf 1
+===================
+Router3(config-router)#network 172.16.1.0 0.0.0.3  area 1
+===================
+Router3(config-router)#network 192.168.1.0 0.0.0.3  area 0
+===================
+
+![2](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/68082e18-631f-4ba6-b6d8-2ce56182e5d4)
+
+Router1(config)#inter GigabitEthernet0/0
+===================
+Router1(config-if)#ip address 192.168.1.1 255.255.255.252
+===================
+Router1(config-if)#no shutdown
+===================
+Router1(config-if)#interface GigabitEthernet0/2
+===================
+Router1(config-if)#ip address 192.168.2.1 255.255.255.252
+===================
+Router1(config-if)#no shutdown
+===================
+
+Router3(config)#router ospf 1
+===================
+Router3(config-router)#network 192.168.1.0 0.0.0.3  area 0
+===================
+Router3(config-router)#network 192.168.2.0 0.0.0.3  area 0
+===================
+
+![3](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/581bb12f-59f0-484a-97d9-b1fecadce804)
+
+Router2(config)#inter GigabitEthernet0/2
+===================
+Router2(config-if)#ip address 192.168.2.2 255.255.255.252
+===================
+Router2(config-if)#no shutdown
+===================
+Router2(config)#inter GigabitEthernet0/1
+===================
+Router2(config-if)#ip address 172.16.2.2 255.255.255.252
+===================
+Router2(config-if)#no shutdown
+===================
+
+Activation OSPF
+====================
+Router2(config)#router ospf 1
+====================
+Router2(config-router)#network 192.168.2.0  0.0.0.3  area 0
+====================
+Router2(config-router)#network 172.16.2.0  0.0.0.3  area 2
+====================
+
+![core1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/d8d90e7f-3fed-4cb9-bdcd-393dca0aa6e7)
+
+Multiswitch_2(config)#interface g 0/1
+====================
+Multiswitch_2(config-if)#no switchport
+====================
+Multiswitch_2(config-if)#ip add  172.16.2.1 255.255.255.0
+====================
+Multiswitch_2(config-if)#exit 
+====================
