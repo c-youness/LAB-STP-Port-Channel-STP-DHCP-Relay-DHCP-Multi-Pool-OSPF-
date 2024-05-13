@@ -108,6 +108,8 @@ Multiswitch(config-if)#int vlan 12
 =====================================
 Multiswitch(config-if)#ip  address 10.10.12.1 255.255.255.128
 =====================================
+Multiswitch(config-if)#exit
+=====================================
 Multiswitch(config-if)#int vlan 13
 =====================================
 Multiswitch(config-if)#ip  address 10.10.13.1 255.255.255.192
@@ -125,8 +127,15 @@ Multiswitch(dhcp-config)#default-router 10.10.11.1
 =====================================
 Multiswitch(dhcp-config)#dns-server 1.1.1.1
 =====================================
+Multiswitch(config)#ip dhcp excluded-address 10.10.11.1
+=====================================
 Multiswitch(dhcp-config)#exit
 =====================================
+![affichiedhcp1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/46e92c39-bd25-49ba-b440-ba59ce00fbff)
+
+![dhcp11](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/4baee097-621b-4ab4-8195-30eb87b843ee)
+
+
 Multiswitch(config)#ip dhcp pool Admin12
 =====================================
 Multiswitch(dhcp-config)#network 10.10.12.0 255.255.255.128
@@ -135,8 +144,15 @@ Multiswitch(dhcp-config)#default-router 10.10.12.1
 =====================================
 Multiswitch(dhcp-config)#dns-server 1.1.1.1
 =====================================
+Multiswitch(config)#ip dhcp excluded-address 10.10.12.1
+=====================================
 Multiswitch(dhcp-config)#exit
 =====================================
+![affichie_dhcp_12](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/c84fa1fd-146e-4569-b36f-9fa599e9538b)
+
+![dhcp12](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/cc71ef73-0a5b-4959-8ebb-c40f54b7139e)
+
+
 Multiswitch(config)#ip dhcp pool Admin13
 =====================================
 Multiswitch(dhcp-config)#network 10.10.13.0 255.255.255.192
@@ -145,6 +161,12 @@ Multiswitch(dhcp-config)#default-router 10.10.13.1
 =====================================
 Multiswitch(dhcp-config)#dns-server 1.1.1.1
 =====================================
+Multiswitch(config)#ip dhcp excluded-address 10.10.13.1
+=====================================
+![activie_dhcp_13](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/9dcaa171-274e-45c7-a1d6-bbb33dd1f786)
+
+![dhcp13](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/ec6e2739-fa49-4cf7-b6fb-187c23a9284c)
+
 
 Activation Mode Access (Switch1-Switch2)
 ========================================
@@ -232,6 +254,23 @@ Switch6(config-if-range)#switchport mode trunk
 ====================
 
 ![mode trunk 01-2](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/f036fd05-b677-4c28-ab6b-2f641f61daf5)
+
+
+Switch(config)#interface port-channel 1
+====================
+Switch(config-if)#switchport mode trunk 
+====================
+![sw1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/cee1c295-0256-40d4-ba65-c16e8ebc97c6)
+
+
+Multiswitch(config)#interface port-channel 1
+====================
+Multiswitch(config-if)#switchport trunk encapsulation dot1q 
+====================
+Multiswitch(config-if)#switchport mode trunk 
+====================
+![multiswitch11111](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/07ad29a2-8908-48a0-97b6-ab48d77231cd)
+
 
 
 
