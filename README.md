@@ -365,3 +365,138 @@ Multiswitch_2(config-if)#ip add  172.16.2.1 255.255.255.0
 ====================
 Multiswitch_2(config-if)#exit 
 ====================
+
+Activation OSPF
+====================
+Multiswitch_2(config)#ip routing
+===================
+Multiswitch_2(config)#router ospf 1
+===================
+Multiswitch_2(config-router)#network 172.16.2.0 0.0.0.3 area 2
+===================
+Multiswitch_2(config)#interface port-channel 1
+===================
+Multiswitch_2(config-if)#switchport trunk encapsulation dot1q 
+===================
+Multiswitch_2(config-if)#switchport mode trunk
+===================
+
+![sw1](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/fe7123a2-29f7-4140-9970-87c9d168946d)
+
+Switch1(config)#interface range fastEthernet 0/1-2
+==================
+Switch1(config-if-range)#switchport mode trunk 
+==================
+
+Switch1(config-if-range)#exit 
+==================
+Switch1(config)#interface range fastEthernet 0/5-6
+==================
+Switch1(config-if-range)#switchport mode access 
+==================
+Switch1(config-if-range)#switchport access vlan 21
+===============
+Switch1(config-if-range)#exit 
+===============
+Switch1(config)#interface port-channel 1
+===============
+Switch1(config-if)#switchport mode trunk
+===============
+
+![sw2](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-
+OSPF-/assets/114768920/6fa3a9cb-c18d-4395-a1b3-a436e789e6a4)
+
+Mode Trunk 
+===============
+Switch2(config)#interface range fastEthernet 0/1-2
+===============
+Switch2(config-if-range)#switchport mode trunk 
+===============
+Switch2(config-if-range)#exit 
+==========
+ Mode Access
+===============
+Switch2(config)#interface range fastEthernet 0/3-4
+===============
+Switch2(config-if-range)#switchport mode access 
+===============
+Switch2(config-if-range)#switchport access vlan 21
+===============
+
+![SW3](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/00bf75c3-d335-407a-ab63-2c6fd54b41e2)
+
+
+ Mode Access
+===============
+Switch3(config)#interface range fastEthernet 0/3-4
+===============
+Switch3(config-if-range)#switchport mode access 
+===============
+Switch3(config-if-range)#switchport access vlan 22
+===============
+
+![sw4](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/af856eb6-e409-4340-8a12-0384b3393f78)
+
+Switch4(config)#interface range fastEthernet 0/1-2
+===============
+Switch4(config-if-range)#switchport mode trunk 
+===============
+Switch4(config-if-range)#exit 
+===============
+Switch4(config)#interface range fastEthernet 0/3-4
+===============
+Switch4(config-if-range)#switchport mode access 
+===============
+Switch4(config-if-range)#switchport access vlan 22
+===============
+![sw5](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/497c5089-1c55-4399-9408-b8406044a05e)
+
+Switch5(config)#interface range fastEthernet 0/2
+===============
+Switch5(config-if-range)#switchport mode trunk
+========
+Switch5(config-if-range)#exit 
+===============
+Switch5(config)#interface range fastEthernet 0/3-4
+===============
+Switch5(config-if-range)#switchport mode access 
+===============
+Switch5(config-if-range)#switchport access vlan 23
+===============
+![sw6](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/ef33b6d2-d8a1-4962-b13b-73aa90ea92ad)
+
+Switch6(config)#interface range fastEthernet 0/3-4
+===============
+Switch6(config-if-range)#switchport mode access 
+===============
+Switch6(config-if-range)#switchport access vlan 23
+===============
+Multiswitch_2(config)#int vlan 21
+=====================================
+Multiswitch_2(config-if)#ip address 10.10.21.1 255.255.255.224
+=====================================
+Multiswitch_2(config-if)#no shutdown 
+=====================================
+Multiswitch_2(config)#int vlan 22
+=====================================
+Multiswitch_2(config-if)#ip address 10.10.22.1 255.255.255.240
+=====================================
+Multiswitch_2(config-if)#no shutdown 
+=====================================
+Multiswitch_2(config)#int vlan 23
+=====================================
+Multiswitch_2(config-if)#ip address 10.10.23.1 255.255.255.248
+=====================================
+Multiswitch_2(config-if)#no shutdown 
+=====================================
+![affichie intervlan-multiswitch](https://github.com/chalyouness/LAB-STP-Port-Channel-STP-DHCP-Relay-DHCP-Multi-Pool-OSPF-/assets/114768920/5fe64be7-4cdb-41ad-951c-2a1476da8317)
+
+Multiswitch_2(config)#router ospf 1
+=====================
+Multiswitch_2(config-router)#net 10.10.21.0  0.0.0.31 =====================
+Multiswitch_2(config-router)#net 10.10.22.0  0.0.0.15 area 2
+=====================
+Multiswitch_2(config-router)#net 10.10.23.0  0.0.0.7 area 2
+=====================
+
+
