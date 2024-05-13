@@ -493,7 +493,8 @@ Multiswitch_2(config-if)#no shutdown
 
 Multiswitch_2(config)#router ospf 1
 =====================
-Multiswitch_2(config-router)#net 10.10.21.0  0.0.0.31 =====================
+Multiswitch_2(config-router)#net 10.10.21.0  0.0.0.31
+=====================
 Multiswitch_2(config-router)#net 10.10.22.0  0.0.0.15 area 2
 =====================
 Multiswitch_2(config-router)#net 10.10.23.0  0.0.0.7 area 2
